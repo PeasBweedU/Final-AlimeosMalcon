@@ -776,6 +776,21 @@ nav ul li a{
     margin-bottom: 30px;
 }
 
+.image-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px; /* Space between cells */
+    padding: 20px; /* Padding around the table */
+}
+
+.image-table img {
+    width: 100%; /* Stretch images to fill the cell */
+    height: 220px; /* Uniform height */
+    object-fit: cover; /* Maintain aspect ratio and fill cell */
+    border-radius: 6px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for style */
+}
+
 .stars i{
     font-size: 20px;
     color: rgb(197, 167, 44);
