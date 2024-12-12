@@ -43,11 +43,13 @@
 nav{
     width: 100%;
     position: fixed;
-    background-color: rgb(21, 74, 74);
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 15%);
+    background-color: transparent;
+    box-shadow: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: top 0.3s ease;
+    z-index: 1000;
 }
 
 nav .logo{
@@ -130,7 +132,7 @@ nav ul li a{
 .button:hover{
     transform: scale(1.1);
     color: white;
-    background-color: rgb(21, 74, 74);
+    background-color: rgba(255, 255, 255, 0.5);
     /* border: 2px solid rgb(42, 37, 68); */
     box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.4);
     padding: 10px 30px;
@@ -485,7 +487,7 @@ nav ul li a{
 }
 
 .abt-text h1 span{
-    color: #fc0050;
+    color: #00a8fc;
     letter-spacing: 1px;
 }
 
@@ -508,7 +510,7 @@ nav ul li a{
 
 .connectbtn{
     display: inline-block;
-    background-color: #fc0050;
+    background-color: #00a8fc;
     font-size: 18px;
     color: white;
     font-weight: bold;
@@ -521,7 +523,7 @@ nav ul li a{
 
 .connectbtn:hover{
     background-color: transparent;
-    border: 2px solid #fc0050;
+    border: 2px solid #00a8fc;
     transform: scale(1.1);
 }
 
@@ -536,7 +538,7 @@ nav ul li a{
     margin: 4px;
     font-size: 30px;
     color: #101010;
-    background-color: white;
+    background-color: rgb(94, 196, 243);
     border-radius: 20px;
     display: inline-flex;
     justify-content: center;
@@ -570,7 +572,7 @@ nav ul li a{
 }
 
 .contact-form h1 span{
-    color:#fc0050;
+    color:#00a8fc;
 }
 
 .contact-form p{
@@ -596,7 +598,7 @@ nav ul li a{
 
 .contact-form form .submit-btn{
     display: inline-block;
-    background-color: #fc0050;
+    background-color: #00a8fc;
     font-size: 27px;
     font-weight: 600px;
     border: 2px solid transparent;
@@ -608,13 +610,66 @@ nav ul li a{
 }
 
 .contact-form form .submit-btn:hover{
-    border: 2px solid #fc0050;
+    border: 2px solid #00a8fc;
     background-color: transparent;
     transform: scale(1.1);
 
 }
 
 /* Registration Form */
+
+.register-body nav{
+    width: 100%;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 15%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: top 0.3s ease;
+    z-index: 1000;
+}
+
+.register-body nav .logo{
+    width: 60px;
+    margin: 2vh;
+    margin-left: 8%;
+}
+
+.register-body nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.register-body .navbar{
+    display: flex;
+    margin-right: 4vh;
+}
+
+.register-body .navbar a{
+    color: white;
+    font-size: 18px;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-weight: 500;   
+    text-decoration: none;
+    transition: ease 0.40s;
+}
+
+.register-body .navbar a:hover,.navbar a.active{
+    background: white;
+    color: black;
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+    border-radius: 5px;
+    
+}
+
+.register-body nav ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+}
 
 .register-body{
     background-color: #101010;
@@ -635,7 +690,7 @@ nav ul li a{
     margin-bottom: 20px;
 }
 .register-form h1 span{
-    color: #fc0050;
+    color: #00a8fc;
 }
 
 .register-form{
@@ -658,13 +713,13 @@ nav ul li a{
     font-size: 22px;
     font-weight: 500;
     margin-top: 20px;
-    color: #fc0050;
+    color: #00a8fc;
 }
 
 
 .register-form form .submitbtn{
     display: inline-block;
-    background-color: #fc0050;
+    background-color: #00a8fc;
     font-size: 27px;
     font-weight: 600px;
     border: 2px solid transparent;
@@ -675,7 +730,7 @@ nav ul li a{
 }
 
 .register-form form .submitbtn:hover{
-    border: 2px solid #fc0050;
+    border: 2px solid #00a8fc;
     background-color: transparent;
     transform: scale(1.1);
 }
@@ -699,12 +754,12 @@ nav ul li a{
 }
 
 .location-heading h1 span{
-    color: #fc0050;
+    color: #00a8fc;
 }
 
 .location-detail h1{
     padding-top: 60px;
-    color: #fc0050;
+    color: #00a8fc;
     font-size: 40px;
 }
 
