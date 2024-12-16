@@ -14,3 +14,6 @@ window.addEventListener('scroll', () => {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
 });
 
+document.querySelectorAll('.no-drag').forEach(el => {
+    el.setAttribute('draggable', 'false');
+});
