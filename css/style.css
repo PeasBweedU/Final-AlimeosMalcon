@@ -621,7 +621,7 @@ nav ul li a{
 .register-body nav{
     width: 100%;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 15%);
     display: flex;
     align-items: center;

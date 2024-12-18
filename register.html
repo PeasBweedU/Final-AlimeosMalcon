@@ -115,6 +115,7 @@
         const termsCheckbox = document.getElementById("termsandcondi");
         const submitButton = document.getElementById("submitBtn");
 
+
         // Add event listener to the terms checkbox
         termsCheckbox.addEventListener("change", function () {
             if (termsCheckbox.checked) {
@@ -129,7 +130,29 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="./mail.js"></script>
+    
+<script>
+    let lastScrollTop = 0; // Tracks the last scroll position
+const nav = document.querySelector('nav'); // Select the navbar element
 
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scrolling down: hide the navbar
+        nav.style.top = '-100px'; // Adjust to match your navbar's height
+    } else {
+        // Scrolling up: show the navbar
+        nav.style.top = '0';
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
+});
+
+document.querySelectorAll('.no-drag').forEach(el => {
+    el.setAttribute('draggable', 'false');
+});
+</script>
 </body>
 
 </html>
+
