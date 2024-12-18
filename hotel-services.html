@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Services</title>
+    <link rel="icon" href="./files/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">   
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body class="contactbody">
+    <nav>
+        <img src="./files/logo.png" class="logo" alt="Logo" title="FirstFlight Travels">
+
+        <ul class="navbar">
+            <li>
+                <a href="./index.html">Home</a>
+                <a href="./index.html#locations">Locations</a>
+                <a href="./index.html#package">Packages</a>
+                <a href="./about.html">About Us</a>
+                <a href="./contact.html">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Hotel Services</h1>
+    </header>
+
+    <section class="services-content">
+        <h2>Welcome to Our Hotel Services</h2>
+        <p>
+            Experience luxury and comfort with our top-notch hotel services. From accommodations to dining, we ensure a memorable stay.
+        </p>
+
+        <h3>Our Hotel Services Include:</h3>
+        <ul>
+            <li>Room Accommodation</li>
+            <li>Dining Services</li>
+            <li>Spa & Wellness</li>
+            <li>Event Hosting</li>
+            <li>Concierge Services</li>
+        </ul>
+
+        <div class="service-image">
+            <img src="./files/flight-service.jpg" alt="Flight Services" title="Flight Services">
+        </div>
+
+        <p>
+ Whether you're staying for business or leisure, our team is dedicated to providing personalized services. 
+ For more information, visit our <a href="./contact.html">Contact Us</a> page or explore our <a href="./index.html#rooms">Rooms</a>.
+        </p>
+    </section>
+
+    <footer>
+       <p>Copyright © 2024 Horizon Escapes. All Rights Reserved.<br>Website developed by: Mohd. Rahil<br>Modified by: Alimeos & Malcon</p>
+    </footer>
+</body>
+<script>
+    let lastScrollTop = 0; // Tracks the last scroll position
+const nav = document.querySelector('nav'); // Select the navbar element
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scrolling down: hide the navbar
+        nav.style.top = '-100px'; // Adjust to match your navbar's height
+    } else {
+        // Scrolling up: show the navbar
+        nav.style.top = '0';
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
+});
+
+document.querySelectorAll('.no-drag').forEach(el => {
+    el.setAttribute('draggable', 'false');
+});
+
+</script>
+</html>
