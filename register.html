@@ -12,14 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-   
+
 </head>
 
 <body class="register-body">
 
+    <!-- Navbar -->
     <nav>
         <img src="./files/logo.png" class="logo" alt="Logo" title="FirstFlight Travels">
-
+        
         <ul class="navbar">
             <li>
                 <a href="./index.html">Home</a>
@@ -31,17 +32,18 @@
         </ul>
     </nav>
 
+    <!-- Registration Section -->
     <section class="registration">
         <div class="register-form">
             <h1>Register <span>Here</span></h1>
-            <form action="" id="contactForm">
+            <form id="contactForm">
                 <input type="text" name="myname1" placeholder="Name" id="name" required>
                 <input type="email" name="myemail" placeholder="Email-Id" id="Email" required>
                 <input type="tel" name="myphone" placeholder="Phone No." id="phonenum" required>
                 <input type="number" name="myage" placeholder="Age" id="age" required>
 
                 <h4>Gender</h4>
-                <input type="radio" name="mygender" id="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="radio" name="mygender" id="Male" required> Male &nbsp; &nbsp;
                 <input type="radio" name="mygender" id="Female"> Female
 
                 <h4>Departure</h4>
@@ -51,28 +53,29 @@
                 <input type="datetime-local" name="returndate" id="dateReturn" required>
 
                 <h4>Travel Destination</h4>
-                <input type="checkbox" name="td" id="bora"> Boracay &nbsp; &nbsp; &nbsp; <br>
-                <input type="checkbox" name="td" id="kash"> Kashmir &nbsp; &nbsp; &nbsp; <br>
-                <input type="checkbox" name="td" id="istan"> Istanbul &nbsp; &nbsp; &nbsp; <br>
-                <input type="checkbox" name="td" id="par"> Paris &nbsp; &nbsp; &nbsp; <br>
-                <input type="checkbox" name="td" id="bal"> Bali &nbsp; &nbsp; &nbsp; <br>
-                <input type="checkbox" name="td" id="dub"> Dubai &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
-                <input type="checkbox" name="td" id="gen"> Geneva &nbsp; &nbsp; &nbsp; <br>
-                <input type="checkbox" name="td" id="port"> Port Blair &nbsp; &nbsp; &nbsp; <br>
-                <input type="checkbox" name="td" id="rom"> Rome &nbsp; &nbsp; &nbsp; <br>
+                <div>
+                    <input type="checkbox" name="td" id="bora"> Boracay <br>
+                    <input type="checkbox" name="td" id="kash"> Kashmir <br>
+                    <input type="checkbox" name="td" id="istan"> Istanbul <br>
+                    <input type="checkbox" name="td" id="par"> Paris <br>
+                    <input type="checkbox" name="td" id="bal"> Bali <br>
+                    <input type="checkbox" name="td" id="dub"> Dubai <br>
+                    <input type="checkbox" name="td" id="gen"> Geneva <br>
+                    <input type="checkbox" name="td" id="port"> Port Blair <br>
+                    <input type="checkbox" name="td" id="rom"> Rome <br>
+                </div>
 
-                <br> <br>
+
                 <h4>Package</h4>
-                <input type="radio" name="locations" id="Bronze" required> Bronze &nbsp; &nbsp; &nbsp; <br>
-                <input type="radio" name="locations" id="Silver"> Silver &nbsp; &nbsp; &nbsp; <br>
-                <input type="radio" name="locations" id="Gold"> Gold &nbsp; &nbsp; &nbsp; <br>
-                <input type="radio" name="locations" id="Platinum"> Platinum &nbsp; &nbsp; &nbsp; <br>
+                <input type="radio" name="locations" id="Bronze" required> Bronze <br>
+                <input type="radio" name="locations" id="Silver"> Silver <br>
+                <input type="radio" name="locations" id="Gold"> Gold <br>
+                <input type="radio" name="locations" id="Platinum"> Platinum <br>
 
-                <br> <br>
-                <input type="checkbox" name="t&c" id="termsandcondi" required> I accept the Terms & Conditions.
-                <br> <br>
+                <br>
+                <input type="checkbox" name="t&c" id="termsandcondi" required> I accept the Terms & Conditions. <br><br>
 
-                <button type="submit" id="submitBtn" value="Submit" class="submitbtn" disabled> Submit</button>
+                <button type="submit" id="submitBtn" class="submitbtn" disabled>Submit</button>
             </form>
         </div>
     </section>
@@ -111,48 +114,29 @@
 
     <!-- Javascript -->
     <script>
-        // Enabling Submit Button only when Terms & Conditions are accepted
+        // Enable the Submit button when Terms & Conditions are accepted
         const termsCheckbox = document.getElementById("termsandcondi");
         const submitButton = document.getElementById("submitBtn");
-
-
-        // Add event listener to the terms checkbox
-        termsCheckbox.addEventListener("change", function () {
-            if (termsCheckbox.checked) {
-                submitButton.disabled = false; // Enable submit button
-                submitButton.style.pointerEvents = "auto"; // Enable pointer events
-            } else {
-                submitButton.disabled = true; // Disable submit button
-                submitButton.style.pointerEvents = "none"; // Disable pointer events (prevents clicking)
-            }
+         termsCheckbox.addEventListener("change", function () {
+            submitButton.disabled = !termsCheckbox.checked;
         });
+
+        // Navbar scrolling behavior
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            nav.style.top = currentScroll > lastScrollTop ? '-100px' : '0';
+            lastScrollTop = Math.max(0, currentScroll);
+        });
+
+        // Prevent draggable elements from being dragged
+        document.querySelectorAll('.no-drag').forEach(el => el.setAttribute('draggable', 'false'));
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
     <script src="./mail.js"></script>
-    
-<script>
-    let lastScrollTop = 0; // Tracks the last scroll position
-const nav = document.querySelector('nav'); // Select the navbar element
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > lastScrollTop) {
-        // Scrolling down: hide the navbar
-        nav.style.top = '-100px'; // Adjust to match your navbar's height
-    } else {
-        // Scrolling up: show the navbar
-        nav.style.top = '0';
-    }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
-});
-
-document.querySelectorAll('.no-drag').forEach(el => {
-    el.setAttribute('draggable', 'false');
-});
-</script>
 </body>
 
 </html>
-
