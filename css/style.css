@@ -795,3 +795,65 @@ nav ul li a{
     font-size: 20px;
     color: rgb(197, 167, 44);
 }
+
+.submitbtn:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    border: 1px solid #999999;
+    cursor: not-allowed;
+    pointer-events: none; /* Disables click and hover effect */
+}
+
+/* Basic styling for the dropdown */
+select#destination {
+    width: 300px;   
+    height: 70px;            /* Set the width of the dropdown */
+    padding: 8px 12px;          /* Add padding inside the dropdown */
+    font-size: 16px;            /* Increase font size */
+    background-color: #f2f2f2;  /* Light background color */
+    border-radius: 5px;         /* Rounded corners */
+    appearance: none;           /* Remove default dropdown arrow (for Webkit browsers) */
+    -webkit-appearance: none;   /* Webkit browsers */
+    -moz-appearance: none;      /* Firefox */
+    cursor: pointer;           /* Pointer cursor on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    color: white;/* Light shadow */
+}
+
+/* Style for dropdown options */
+select#destination option {
+    padding: 8px 12px;           /* Padding for options */
+    font-size: 16px;              /* Font size of options */
+    background-color:0 2px 5px rgba(0, 0, 0, 0.1);   /* White background for options */
+    color: #333;                 /* Text color */
+}
+
+/* Hover effect for options */
+select#destination option:hover {
+    background-color: #590ebb;   /* Light gray background on hover */
+}
+
+/* Add custom arrow for the dropdown */
+select#destination::-ms-expand {
+    display: none; /* Hide the default dropdown arrow in Internet Explorer */
+}
+
+/* Styling the dropdown container */
+select#destination {
+    /* background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"%3E%3Cpath d="M0 0l5 5 5-5z" fill="%23999" /%3E%3C/svg%3E'); */
+    background-color: #191919;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;  /* Extra padding on the right for the arrow */
+}
+
+/* Optional: Style the dropdown on focus */
+select#destination:focus {
+    border-color: #000000; /* Green border on focus */
+    outline: none;         /* Remove default outline */
+}
+
+/* Optional: Style the dropdown container on focus */
+select#destination:focus option {
+    background-color: #e2e2e2; /* Light gray background for focused option */
+}
