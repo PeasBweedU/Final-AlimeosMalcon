@@ -36,14 +36,14 @@ function submitForm(e) {
   // Get selected destinations
   var destinations = [];
   if (document.getElementById("bora").checked) destinations.push("Boracay");
-  if (document.getElementById("kash").checked) destinations.push("Kashmir");
-  if (document.getElementById("istan").checked) destinations.push("Istanbul");
-  if (document.getElementById("par").checked) destinations.push("Paris");
-  if (document.getElementById("bal").checked) destinations.push("Bali");
-  if (document.getElementById("dub").checked) destinations.push("Dubai");
-  if (document.getElementById("gen").checked) destinations.push("Geneva");
-  if (document.getElementById("port").checked) destinations.push("Port Blair");
-  if (document.getElementById("rom").checked) destinations.push("Rome");
+  if (document.getElementById("kash").checked) destinations.push("Palawan");
+  if (document.getElementById("istan").checked) destinations.push("Chocolate Hills");
+  if (document.getElementById("par").checked) destinations.push("Banaue Rice Terraces");
+  if (document.getElementById("bal").checked) destinations.push("Cebu");
+  if (document.getElementById("dub").checked) destinations.push("Siargao Island");
+  if (document.getElementById("gen").checked) destinations.push("Vigan");
+  if (document.getElementById("port").checked) destinations.push("Mayon Volcano");
+
   var destinationString = destinations.join(", ");
 
   // Get the selected package
